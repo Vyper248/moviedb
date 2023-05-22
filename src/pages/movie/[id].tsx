@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import Head from 'next/head'
-import { Image, Item, Container, Card, Header, Button, Divider, Tab } from 'semantic-ui-react';
+import { Item, Container, Header, Divider } from 'semantic-ui-react';
 
 import { getMovie } from '@/lib/moviedb'
 
