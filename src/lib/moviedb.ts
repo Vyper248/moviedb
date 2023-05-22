@@ -31,3 +31,8 @@ export const getMovie = async (id: string) => {
     let movie = await customFetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=images,credits,videos,reviews&language=en`);
     return movie;
 }
+
+export const searchMovies = async (text: string) => {
+    let searchedMovies = await customFetch(`https://api.themoviedb.org/3/search/movie?query=${text}`);
+    return searchedMovies;
+}
