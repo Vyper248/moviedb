@@ -27,7 +27,7 @@ export default function Search({movies}: Props) {
 				<meta name="description" content="Searched Movies" />
 			</Head>
 			<main>
-				<MovieList movies={movies.results}/>
+				<MovieList movies={movies}/>
 			</main>
 		</>
 	)

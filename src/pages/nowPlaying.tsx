@@ -26,7 +26,7 @@ export default function NowPlaying({movies}: Props) {
 				<meta name="description" content="Now playing" />
 			</Head>
 			<main>
-				<MovieList movies={movies.results}/>
+				<MovieList movies={movies}/>
 			</main>
 		</>
 	)

@@ -22,8 +22,8 @@ export const customFetch = async (url: string, options?: FetchOptions) => {
     }
 }
 
-export const getMovies = async (type = 'now_playing') => {
-    let movies = await customFetch(`https://api.themoviedb.org/3/movie/${type}`);
+export const getMovies = async (type = 'now_playing', page = 1) => {
+    let movies = await customFetch(`https://api.themoviedb.org/3/movie/${type}?language=en&page=${page}`);
     return movies;
 }
 
@@ -33,6 +33,6 @@ export const getMovie = async (id: string) => {
 }
 
 export const searchMovies = async (text: string) => {
-    let searchedMovies = await customFetch(`https://api.themoviedb.org/3/search/movie?query=${text}`);
+    let searchedMovies = await customFetch(`https://api.themoviedb.org/3/search/movie?query=${text}&language=en`);
     return searchedMovies;
 }

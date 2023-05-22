@@ -7,7 +7,6 @@ type ActorProps = {
 }
 
 const ActorDisplay = ({actor}: ActorProps) => {
-	console.log(actor.profile_path)
 	return (
 		<Card>
 			{ actor.profile_path !== null 

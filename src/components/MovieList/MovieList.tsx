@@ -1,18 +1,19 @@
-import { Movie } from "../../../types";
+import { Movie, Movies } from "../../../types";
 
 import { Card } from "semantic-ui-react";
 
 import MovieLink from "../Movie/MovieLink";
+import { useState } from "react";
 
 type MovieListProps = {
-	movies: Movie[];
+	movies: Movies;
 }
 
-const MovieList = ({movies}: MovieListProps) => {
+const MovieList = ({movies}: MovieListProps) => {	
 	return (
 		<Card.Group centered stackable doubling>
 		{
-			movies.map(movie => <MovieLink movie={movie}/>)
+			movies.results.map(movie => <MovieLink movie={movie}/>)
 		}
 		</Card.Group>
 	);

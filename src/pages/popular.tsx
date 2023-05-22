@@ -26,7 +26,7 @@ export default function Popular({movies}: Props) {
 				<meta name="description" content="Popualar Movies" />
 			</Head>
 			<main>
-				<MovieList movies={movies.results}/>
+				<MovieList movies={movies}/>
 			</main>
 		</>
 	)

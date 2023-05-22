@@ -26,7 +26,7 @@ export default function Upcoming({movies}: Props) {
 				<meta name="description" content="Upcoming Movies" />
 			</Head>
 			<main>
-				<MovieList movies={movies.results}/>
+				<MovieList movies={movies}/>
 			</main>
 		</>
 	)

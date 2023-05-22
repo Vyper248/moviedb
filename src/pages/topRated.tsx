@@ -26,7 +26,7 @@ export default function TopRated({movies}: Props) {
 				<meta name="description" content="Top Rated Movies" />
 			</Head>
 			<main>
-				<MovieList movies={movies.results}/>
+				<MovieList movies={movies}/>
 			</main>
 		</>
 	)
