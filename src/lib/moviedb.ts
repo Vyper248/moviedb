@@ -26,3 +26,8 @@ export const getMovies = async (type = 'now_playing') => {
     let movies = await customFetch('https://api.themoviedb.org/3/movie/now_playing');
     return movies;
 }
+
+export const getMovie = async (id: string) => {
+    let movie = await customFetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=images,credits,videos,reviews&language=en`);
+    return movie;
+}
