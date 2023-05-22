@@ -5,7 +5,6 @@ export type Genre = {
 
 export type Actor = {
     id: string;
-    gender: number;
     name: string;
     character: string;
     profile_path: string;
