@@ -1,7 +1,7 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import { Header, Menu, Input, Button } from "semantic-ui-react";
+import { Header, Menu, Input, Button, Form } from "semantic-ui-react";
 import Head from "next/head";
 
 type LayoutProps = {
@@ -12,8 +12,17 @@ const Layout = ({children}: LayoutProps) => {
 	const [search, setSearch] = useState('');
 	const router = useRouter();
 
+	//when changing page, clear the search
+	useEffect(() => {
+		setSearch('');
+	}, [router.pathname])
+
 	const onSearch = () => {
-		router.push(`/search/${search}`);
+		if (search.length > 0) router.push(`/search/${search}`);
+	}
+
+	const onHandleFormSubmit = () => {
+		onSearch();
 	}
 
 	return (
@@ -29,11 +38,13 @@ const Layout = ({children}: LayoutProps) => {
 				<Menu.Item name='Top Rated' active={router.pathname === '/topRated'} onClick={() => router.push('/topRated')}/>
 				<Menu.Item name='Upcoming' active={router.pathname === '/upcoming'} onClick={() => router.push('/upcoming')}/>
 				<Menu.Menu position='right'>
-					<Menu.Item>
-						<Input placeholder='Search...' onChange={(e) => setSearch(e.target.value)} action>
-							<input/>
-							<Button icon='search' onClick={onSearch}/>
-						</Input>
+					<Menu.Item style={{padding: '6px 16px'}}>
+						<Form onSubmit={onHandleFormSubmit}>
+							<Form.Input size="small" placeholder='Search...' value={search} onChange={(e) => setSearch(e.target.value)} action>
+								<input/>
+								<Button icon='search' onClick={onSearch}/>
+							</Form.Input>
+						</Form>
 					</Menu.Item>
 				</Menu.Menu>
 			</Menu>
