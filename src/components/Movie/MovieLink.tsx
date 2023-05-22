@@ -18,7 +18,7 @@ const Movie = ({movie}: MovieProps) => {
 		<Card onClick={onClickMovie}>
 			{ movie.backdrop_path !== null 
 				? <Image src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`} wrapped centered alt='backdrop'/>
-				: <Image wrapped style={{height: '163px'}} alt='blank'/>
+				: <div style={{height: '163px', backgroundColor: '#EEE'}}/>
 			}
 			<Card.Content>
 				<Card.Header>{movie.title}</Card.Header>

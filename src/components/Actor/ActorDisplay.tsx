@@ -11,7 +11,7 @@ const ActorDisplay = ({actor}: ActorProps) => {
 		<Card>
 			{ actor.profile_path !== null 
 				? <Image src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`} wrapped centered alt='profile'/>
-				: <Image wrapped style={{height: '197px'}} alt='blank'/>
+				: <div style={{height: '197px', backgroundColor: '#EEE'}}/>
 			}
 			<Card.Content>
 				<Card.Header>{actor.name}</Card.Header>
