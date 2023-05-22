@@ -11,13 +11,13 @@ const ReviewDisplay = ({review}: ReviewDisplayProps) => {
 	const [viewMore, setViewMore] = useState(false);
 
 	const smallContent = review.content.slice(0,350) + '...';
-	const avatar = review.author_details.avatar_path;
+	const avatar = review.author_details.avatar_path || '';
 
 	let avatarSrc = avatar.includes('http') ? avatar.replace('/','') : `https://image.tmdb.org/t/p/w185${avatar}`;
 
 	return (
 		<Comment>
-			{ avatar !== null 
+			{ avatar.length > 0 
 				? <Comment.Avatar src={avatarSrc}/>
 				: <Comment.Avatar/>
 			}

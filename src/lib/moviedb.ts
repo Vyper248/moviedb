@@ -23,7 +23,7 @@ export const customFetch = async (url: string, options?: FetchOptions) => {
 }
 
 export const getMovies = async (type = 'now_playing') => {
-    let movies = await customFetch('https://api.themoviedb.org/3/movie/now_playing');
+    let movies = await customFetch(`https://api.themoviedb.org/3/movie/${type}`);
     return movies;
 }
 
