@@ -37,6 +37,7 @@ const Layout = ({children}: LayoutProps) => {
 					</Menu.Item>
 				</Menu.Menu>
 			</Menu>
+			<br/>
 			{ children }
 		</div>
 	);
