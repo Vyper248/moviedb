@@ -18,8 +18,8 @@ const ActorList = ({actors}: ActorListProps) => {
 			<Card.Group itemsPerRow={8} centered doubling>
 			{
 				showAllCast 
-					? actors.map(actor => <ActorDisplay actor={actor}/>)
-					: topCast.map(actor => <ActorDisplay actor={actor}/>)
+					? actors.map(actor => <ActorDisplay key={actor.id} actor={actor}/>)
+					: topCast.map(actor => <ActorDisplay key={actor.id} actor={actor}/>)
 			}
 			</Card.Group>
 			<div style={{textAlign: 'center'}}>

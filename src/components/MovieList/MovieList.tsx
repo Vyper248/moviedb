@@ -13,7 +13,7 @@ const MovieList = ({movies}: MovieListProps) => {
 	return (
 		<Card.Group centered stackable doubling>
 		{
-			movies.results.map(movie => <MovieLink movie={movie}/>)
+			movies.results.map(movie => <MovieLink key={movie.id} movie={movie}/>)
 		}
 		</Card.Group>
 	);

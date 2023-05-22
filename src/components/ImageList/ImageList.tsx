@@ -19,7 +19,7 @@ const ImageList = ({images}: ImageListProps) => {
 				<Tab.Pane style={paneStyle}>
 					<Image.Group size='small'>
 					{
-						images.backdrops.map(image => <Image src={`https://image.tmdb.org/t/p/w780${image.file_path}`} href={`https://image.tmdb.org/t/p/original${image.file_path}`} target='_blank'/>)
+						images.backdrops.map(image => <Image key={image.file_path} src={`https://image.tmdb.org/t/p/w780${image.file_path}`} href={`https://image.tmdb.org/t/p/original${image.file_path}`} target='_blank' alt='backdrop'/>)
 					}
 					</Image.Group>
 				</Tab.Pane>
@@ -30,7 +30,7 @@ const ImageList = ({images}: ImageListProps) => {
 				<Tab.Pane style={paneStyle}>
 					<Image.Group size='small'>
 					{
-						images.posters.map(image => <Image src={`https://image.tmdb.org/t/p/w780${image.file_path}`} href={`https://image.tmdb.org/t/p/original${image.file_path}`} target='_blank'/>)
+						images.posters.map(image => <Image key={image.file_path} src={`https://image.tmdb.org/t/p/w780${image.file_path}`} href={`https://image.tmdb.org/t/p/original${image.file_path}`} target='_blank' alt='poster'/>)
 					}
 					</Image.Group>
 				</Tab.Pane>
@@ -41,7 +41,7 @@ const ImageList = ({images}: ImageListProps) => {
 				<Tab.Pane style={paneStyle}>
 					<Image.Group size='small'>
 					{
-						images.logos.map(image => <Image src={`https://image.tmdb.org/t/p/w780${image.file_path}`} href={`https://image.tmdb.org/t/p/original${image.file_path}`} target='_blank'/>)
+						images.logos.map(image => <Image key={image.file_path} src={`https://image.tmdb.org/t/p/w780${image.file_path}`} href={`https://image.tmdb.org/t/p/original${image.file_path}`} target='_blank' alt='logo'/>)
 					}
 					</Image.Group>
 				</Tab.Pane>

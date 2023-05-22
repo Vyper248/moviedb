@@ -14,7 +14,7 @@ const ReviewList = ({reviews}: ReviewListProps) => {
 	return (
 		<Comment.Group style={{maxWidth: '100%'}}>
 		{
-			reviews.results.map(review => <ReviewDisplay review={review}/>)
+			reviews.results.map(review => <ReviewDisplay key={review.id} review={review}/>)
 		}
 		</Comment.Group>
 	);
