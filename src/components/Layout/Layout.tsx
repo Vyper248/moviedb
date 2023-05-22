@@ -2,6 +2,7 @@ import { ReactNode, useState } from "react";
 import { useRouter } from "next/router";
 
 import { Header, Menu, Input, Button } from "semantic-ui-react";
+import Head from "next/head";
 
 type LayoutProps = {
 	children: ReactNode | ReactNode[];
@@ -17,6 +18,10 @@ const Layout = ({children}: LayoutProps) => {
 
 	return (
 		<div>
+			<Head>
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 			<Header size='huge' textAlign="center" style={{marginTop: '10px'}}>Movie App</Header>
 			<Menu>
 				<Menu.Item name='Now Playing' active={router.pathname === '/nowPlaying'} onClick={() => router.push('/nowPlaying')}/>

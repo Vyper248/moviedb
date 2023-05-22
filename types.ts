@@ -40,6 +40,7 @@ export type Video = {
 }
 
 export type Movie = {
+    id: number;
     backdrop_path: string;
     genres: Genre[];
     release_date: string;
@@ -68,7 +69,7 @@ export type Movie = {
     }
 }
 
-export type MovieList = {
+export type Movies = {
     dates: {
         maximum: string;
         minimum: string;
