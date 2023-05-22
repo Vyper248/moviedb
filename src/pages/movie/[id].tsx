@@ -35,7 +35,10 @@ export default function Movie({movie}: Props) {
                 <Container>
                     <Item.Group>
                         <Item>
-                            <Item.Image size='large' src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`}/>
+                            { movie.backdrop_path !== null 
+                                ? <Item.Image src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`} wrapped centered/>
+                                : null
+                            }
                             <Item.Content>
                                 <Item.Header>{movie.title}</Item.Header>
                                 <Item.Meta>Release Date: {movie.release_date}</Item.Meta>
