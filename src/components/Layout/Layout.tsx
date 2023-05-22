@@ -39,6 +39,10 @@ const Layout = ({children}: LayoutProps) => {
 			</Menu>
 			<br/>
 			{ children }
+			<br/>
+			<br/>
+			<br/>
+			<br/>
 		</div>
 	);
 }

@@ -6,6 +6,7 @@ import { getMovie } from '@/lib/moviedb'
 
 import ActorList from '@/components/ActorList/ActorList';
 import ImageList from '@/components/ImageList/ImageList';
+import ReviewList from '@/components/ReviewList/ReviewList';
 
 import type { Movie } from '../../../types';
 import type { GetServerSideProps } from 'next';
@@ -51,10 +52,9 @@ export default function Movie({movie}: Props) {
 
                     <Header textAlign='center'>Images</Header>
                     <ImageList images={movie.images}/>
-                    <Divider/>
 
                     <Header textAlign='center'>Reviews</Header>
-                    
+                    <ReviewList reviews={movie.reviews}/>
                 </Container>
 			</main>
 		</>

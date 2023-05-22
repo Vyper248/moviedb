@@ -11,7 +11,6 @@ type ImageListProps = {
 }
 
 const ImageList = ({images}: ImageListProps) => {
-	let topImages = images.backdrops.slice(0,8);
 	const paneStyle = {maxHeight: '500px', overflow: 'auto', textAlign: 'center'};
 
 	const tabContent = [

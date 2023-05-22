@@ -11,7 +11,7 @@ type ActorListProps = {
 
 const ActorList = ({actors}: ActorListProps) => {
 	const [showAllCast, setShowAllCast] = useState(false);
-    let topCast = actors.slice(0,8);
+    let topCast = actors.length > 8 ? actors.slice(0,8) : actors;
 
 	return (
 		<>
@@ -23,12 +23,18 @@ const ActorList = ({actors}: ActorListProps) => {
 			}
 			</Card.Group>
 			<div style={{textAlign: 'center'}}>
-				<br/>
-				{
-					showAllCast 
-						? <Button onClick={() => setShowAllCast(false)}>Hide</Button>
-						: <Button onClick={() => setShowAllCast(true)}>Show All</Button>
-				}
+			{
+				actors.length > 8 && (
+					<>
+						<br/>
+						{
+							showAllCast 
+								? <Button onClick={() => setShowAllCast(false)}>Hide</Button>
+								: <Button onClick={() => setShowAllCast(true)}>Show All</Button>
+						}
+					</>
+				)
+			}
 			</div>
 		</>
 	);
